@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mohamed Torki Chaabane - Full Stack Developer</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  
+  <style>
+    /* Enhanced Interests Section */
+    .interests .icon-box {
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+      transition: all 0.3s ease-in-out;
+      text-align: center;
+      border: 1px solid #eef0ef;
+      border-radius: 15px;
+      height: 100%;
+    }
+    
+    .interests .icon-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px 0 rgba(68, 88, 144, 0.2);
+    }
+    
+    .interests .icon-box i {
+      font-size: 48px;
+      line-height: 1;
+      margin-bottom: 15px;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .interests .icon-box:hover i {
+      transform: scale(1.2);
+    }
+    
+    .interests .icon-box h3 {
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 18px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .interests .icon-box h3:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 50px;
+      height: 2px;
+      background: #149ddd;
+      bottom: 0;
+      left: calc(50% - 25px);
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .interests .icon-box:hover h3:after {
+      width: 80px;
+      left: calc(50% - 40px);
+    }
+    
+    /* Enhanced Contact Section */
+    .contact .info {
+      width: 100%;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .contact .info:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px 0 rgba(68, 88, 144, 0.2);
+    }
+    
+    .contact .info i {
+      font-size: 20px;
+      color: #149ddd;
+      float: left;
+      width: 44px;
+      height: 44px;
+      background: #dff3fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50px;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .contact .info:hover i {
+      background: #149ddd;
+      color: #fff;
+    }
+    
+    .contact .info h4 {
+      padding: 0 0 0 60px;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #050d18;
+    }
+    
+    .contact .info p {
+      padding: 0 0 10px 60px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #173b6c;
+    }
+    
+    .contact .social-links {
+      padding-left: 60px;
+    }
+    
+    .contact .social-links a {
+      font-size: 18px;
+      display: inline-block;
+      background: #dff3fc;
+      color: #149ddd;
+      line-height: 1;
+      padding: 8px 0;
+      border-radius: 50%;
+      text-align: center;
+      width: 44px;
+      height: 44px;
+      transition: all 0.3s ease-in-out;
+      margin-right: 10px;
+    }
+    
+    .contact .social-links a:hover {
+      background: #149ddd;
+      color: #fff;
+      transform: scale(1.1);
+    }
+    
+    /* Floating animation for interests */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .delay-1 { animation-delay: 0.5s; }
+    .delay-2 { animation-delay: 1s; }
+    .delay-3 { animation-delay: 1.5s; }
+    .delay-4 { animation-delay: 2s; }
+    
+    /* Pulse animation for contact icons */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    
+    .pulse:hover {
+      animation: pulse 1s infinite;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light text-center"><a href="index.html">Mohamed Torki Chaabane</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/mtc88" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/MedTorkiChaabane" class="github"><i class="bx bxl-github"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+  <ul>
+    <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+    <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+    <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-code-alt"></i> <span>Skills</span></a></li>
+    <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+    <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projects</span></a></li>
+    <li><a href="#interests" class="nav-link scrollto"><i class="bx bx-heart"></i> <span>Interests</span></a></li>
+    <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+  </ul>
+</nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Mohamed Torki Chaabane</h1>
+      <p>I'm <span class="typed" data-typed-items="Full Stack Developer, Angular Specialist, Spring Boot Developer"></span></p>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <p>Full Stack Developer specialized in Angular and Spring Boot. Motivated by technical challenges and continuous improvement, I aim to contribute to innovative projects within a renowned company while pursuing my professional growth.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>Full Stack Developer</h3>
+            <p class="fst-italic">
+              Experienced in developing web applications with modern technologies and frameworks.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+216 96 703 443</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Rafraf, Bizerte, Tunisia</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>mohamedtorkic@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                </ul>
+              </div>
+            </div>
+            <p>
+              With expertise in both front-end and back-end development, I create efficient, scalable, and user-friendly applications. My technical skills span JavaScript/TypeScript, Angular, Node.js, Spring Boot, and various databases. I'm passionate about solving complex problems and delivering high-quality software solutions.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p>Here are the technical skills I've acquired through my professional experiences and personal projects.</p>
+        </div>
+
+        <div class="row skills-content">
+
+          <div class="col-lg-6" data-aos="fade-up">
+            <div class="progress">
+              <span class="skill">JavaScript/TypeScript <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Angular <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">HTML/CSS <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Node.js/Express.js <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Java/Spring Boot <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="progress">
+              <span class="skill">MongoDB/MySQL <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">PHP/Symfony <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Bootstrap <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Git/Agile Methods <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">JavaFX <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+          <p>My professional journey and education background.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+            <h3 class="resume-title">Summary</h3>
+            <div class="resume-item pb-0">
+              <h4>Mohamed Torki Chaabane</h4>
+              <p><em>Innovative and deadline-driven Full Stack Developer with 8+ years of experience in designing and developing web applications from initial concept to final, polished product.</em></p>
+              <ul>
+                <li>Rafraf, Bizerte, Tunisia</li>
+                <li>+216 96 703 443</li>
+                <li>mohamedtorkic@gmail.com</li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Angular - Spring Boot Training</h4>
+              <h5>Sep 2024 - Nov 2024</h5>
+              <p><em>CrocoCoder, Tunis, Tunisia</em></p>
+            </div>
+            <div class="resume-item">
+              <h4>Full Stack JavaScript Training</h4>
+              <h5>Jan 2023 - June 2023</h5>
+              <p><em>CrocoCoder, Tunis, Tunisia</em></p>
+            </div>
+            <div class="resume-item">
+              <h4>D.U.T in Software Engineering</h4>
+              <h5>2007 - 2010</h5>
+              <p><em>INSAT, Tunis, Tunisia</em></p>
+            </div>
+            
+            <h3 class="resume-title">Languages</h3>
+            <div class="resume-item">
+              <ul>
+                <li><strong>Arabic:</strong> C1 (Native)</li>
+                <li><strong>English:</strong> B2 (Professional)</li>
+                <li><strong>French:</strong> B2 (Professional)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Freelance Full Stack Developer</h4>
+              <h5>2022 - Present</h5>
+              <p><em>Tunis, Tunisia</em></p>
+              <ul>
+                <li>Developed custom web applications using Angular, Spring Boot, MongoDB/MySQL</li>
+                <li>Implemented API integration and secure authentication</li>
+                <li>Deployed applications on cloud platforms</li>
+                <li>Collaborated with remote teams using Agile methodologies</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>MEAN Stack Developer</h4>
+              <h5>2014 - 2022</h5>
+              <p><em>AKEOPLUS TUNISIE, Tunis, Tunisia</em></p>
+              <ul>
+                <li>Developed industrial supervision web platforms</li>
+                <li>Created dashboards for monitoring connected machines</li>
+                <li>Built production tracking dashboards</li>
+                <li>Worked with MEAN stack technologies</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Technical-Commercial Director</h4>
+              <h5>2011 - 2014</h5>
+              <p><em>STBC, Tunis, Tunisia</em></p>
+              <ul>
+                <li>Managed commercial prospecting and team leadership</li>
+                <li>Oversaw technical and commercial aspects of projects</li>
+                <li>Developed client relationships and managed accounts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+
+    <!-- ======= Projects Section ======= -->
+    <section id="projects" class="projects">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Projects</h2>
+          <p>Here are some of my notable projects</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+            <div class="project-item">
+              <h4>Restaurant Management System</h4>
+              <h5>Nov 2024</h5>
+              <p><em>CrocoCoder, Tunis</em></p>
+              <ul>
+                <li>Developed a web application for restaurant management</li>
+                <li>Technologies: SPA, Java, TypeScript, Angular, Node.js, MySQL, Spring Boot, sessionStorage</li>
+              </ul>
+            </div>
+            <div class="project-item">
+              <h4>Private University Application</h4>
+              <h5>May 2023</h5>
+              <p><em>CrocoCoder, Tunis</em></p>
+              <ul>
+                <li>Developed a web application for a private university</li>
+                <li>Technologies: SPA, TypeScript, Angular, Express.js, Node.js, MongoDB, localStorage</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-item">
+              <h4>Guest House Management System</h4>
+              <h5>Mar 2023</h5>
+              <p><em>CrocoCoder, Tunis</em></p>
+              <ul>
+                <li>Developed a web application for guest house management</li>
+                <li>Technologies: HTML, CSS, Bootstrap, JavaScript, localStorage</li>
+              </ul>
+            </div>
+            <div class="project-item">
+              <h4>Bank ATM System</h4>
+              <h5>Apr 2009 - Jun 2009</h5>
+              <p><em>INSAT, Tunis</em></p>
+              <ul>
+                <li>Developed a client/server application for bank ATM</li>
+                <li>Technologies: Java, QT</li>
+              </ul>
+            </div>
+            <div class="project-item">
+              <h4>Student Management System</h4>
+              <h5>Dec 2008 - Jan 2009</h5>
+              <p><em>INSAT, Tunis</em></p>
+              <ul>
+                <li>Developed a web application for student management</li>
+                <li>Technologies: HTML, CSS, JavaScript, PHP, MySQL, MariaDB</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Projects Section -->
+
+    <!-- ======= Enhanced Interests Section ======= -->
+    <section id="interests" class="interests section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Interests</h2>
+          <p>Beyond coding, these are the activities that fuel my creativity and keep me balanced.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="icon-box floating" data-aos="fade-up">
+              <i class="bi bi-controller" style="color: #ffbb2c;"></i>
+              <h3>Football</h3>
+              <p>Passionate about the beautiful game, both watching and playing.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="icon-box floating delay-1" data-aos="fade-up" data-aos-delay="100">
+              <i class="bi bi-tennis-ball" style="color: #5578ff;"></i>
+              <h3>Tennis</h3>
+              <p>Enjoy the strategy and athleticism of competitive tennis.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="icon-box floating delay-2" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-tree" style="color: #e80368;"></i>
+              <h3>Hiking</h3>
+              <p>Exploring nature's beauty through challenging trails.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="icon-box floating delay-3" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-people" style="color: #e361ff;"></i>
+              <h3>Volunteering</h3>
+              <p>Giving back to the community through meaningful work.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Interests Section -->
+
+    <!-- ======= Enhanced Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Let's connect! I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+          <div class="col-lg-6 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt pulse"></i>
+                <h4>Location:</h4>
+                <p>Rafraf, Bizerte, Tunisia</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope pulse"></i>
+                <h4>Email:</h4>
+                <p>mohamedtorkic@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone pulse"></i>
+                <h4>Call:</h4>
+                <p>+216 96 703 443</p>
+              </div>
+
+              <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12790.26074633439!2d10.1836376!3d37.1884574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12e2b5d8e8c5f5b5%3A0x3a3b3b3b3b3b3b3b!2sRafraf%2C%20Tunisia!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+
+         
+        </div>
+
+        <div class="social-links text-center mt-4">
+          <a href="https://www.linkedin.com/in/mtc88" class="linkedin pulse"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/MedTorkiChaabane" class="github pulse"><i class="bx bxl-github"></i></a>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+  &copy; Copyright <strong><span>Mohamed Torki Chaabane</span></strong> 
+</div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Custom JS for animations -->
+  <script>
+    // Add hover effects to interest boxes
+    document.addEventListener('DOMContentLoaded', function() {
+      const interestBoxes = document.querySelectorAll('.icon-box');
+      
+      interestBoxes.forEach(box => {
+        box.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px)';
+          this.style.boxShadow = '0 15px 35px 0 rgba(68, 88, 144, 0.2)';
+        });
+        
+        box.addEventListener('mouseleave', function() {
+          this.style.transform = '';
+          this.style.boxShadow = '';
+        });
+      });
+      
+      // Add click effect to contact icons
+      const contactIcons = document.querySelectorAll('.pulse');
+      contactIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+          this.style.animation = 'pulse 0.5s';
+          setTimeout(() => {
+            this.style.animation = '';
+          }, 500);
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
