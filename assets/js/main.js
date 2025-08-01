@@ -258,4 +258,18 @@
    */
   new PureCounter();
 
+    document.addEventListener('contextmenu', function(e) {
+    // Only prevent on images within portfolio items
+    if (e.target.closest('.portfolio-item img')) {
+      e.preventDefault();
+    }
+  });
+     document.addEventListener('contextmenu', function(e) {
+    // Only prevent on images within portfolio items
+    if (e.target.closest('.portfolio-links img')) {
+      e.preventDefault();
+    }
+  });
+
+
 })()
